@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Money master</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <header class="w-3/4 mx-auto mt-5">
+        <img class="mx-auto w-2/6" src="./images/Money Master💰.png" alt="Money Master">
+    </header>
+    <main class="w-3/4 mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <section class="w-full mt-6">
+            <img class="w-full" src="./images/Pexels Photo by Karolina Grabowska.svg">
+        </section>
+        <section class="w-full">
+            <h2 class="text-4xl text-center mt-5 font-bold">Income</h2>
+            <form class="" id="calculate">
+                <div class="flex items-center gap-5 mt-7 justify-around w-2/3 mx-auto">
+                    <label for="income">Income:</label>
+                    <input type="text" id="income" data-input="Income" placeholder="Type here" class="input input-bordered input-error w-60 max-w-xs ml-auto"  autocomplete="off" />
+                </div>
+                <div class="flex items-center gap-5 mt-7 justify-around w-2/3 mx-auto">
+                    <label for="food">Food:</label>
+                    <input type="text" id="food" data-input="Food" placeholder="Type here" class="input input-bordered input-error w-60 max-w-xs ml-auto"    autocomplete="off" />
+                </div>
+                <div class="flex items-center gap-5 mt-7 justify-around w-2/3 mx-auto">
+                    <label for="rent">Rent:</label>
+                    <input type="text" id="rent" data-input="Rent" placeholder="Type here" class="input input-bordered input-error w-60 max-w-xs ml-auto"    autocomplete="off" />
+                </div>
+                <div class="flex items-center gap-5 mt-7 justify-around w-2/3 mx-auto">
+                    <label for="clothes">Clothes:</label>
+                    <input type="text" id="clothes" data-input="Clothes" placeholder="Type here" class="input input-bordered input-error w-60 max-w-xs ml-auto" autocomplete="off" />
+                </div>
+                <button type="submit" class="btn btn-outline btn-secondary w-1/4 mx-52 mt-10">Calculate</button>
+                <!-- total  -->
+                <p class="text-3xl font-blod text-center mt-8">Total Expenses: <span id="expenses">5500</span></p>
+                <p class="text-3xl font-blod text-center mt-4">Balance: <span id="balance">4500</span></p>
+            </form>
+            <form id="save-money">
+                <div class="flex items-center gap-5 mt-9">
+                    <label for="save-presents">Save:</label>
+                    <input id="save-presents" type="text" placeholder="Type here" class="input input-bordered input-accent w-full max-w-xs"    autocomplete="off" />
+                    <p>%</p>
+                    <button type="submit" class="btn btn-outline btn-secondary w-1/4">Save</button>                   
+                </div>                
+                <p class="text-3xl font-blod text-center mt-8">Saving Amount: <span id="saving">450</span></p>
+                <p class="text-3xl font-blod text-center mt-4">Remaining Balance: <span id="remaining">4050</span></p>
+            </form>
+        </section>
+
+    </main>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
