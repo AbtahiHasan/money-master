@@ -8,6 +8,7 @@ const incomeInput = document.getElementById("income"),
     reminingBalance = document.getElementById("balance"),
     saveMoney = document.getElementById("save-money"),
         expensesAmount = numberCatcher(expenses);
+let printNumber = true;
 
 form.addEventListener("submit", expensesCalculator);
 function expensesCalculator(e) {
@@ -17,20 +18,17 @@ function expensesCalculator(e) {
         rentCostValue = inputValidator(rentCost),
         clothesCostValue = inputValidator(clothesCost);
     let totalExpenses = foodCostValue + rentCostValue + clothesCostValue;
-    if(incomeInput.value !== "") {
+    if(printNumber) {
         expenses.innerText = totalExpenses;
+    }   
     
-        if(totalExpenses > incomeInputValue) {
-            alert("baki taka gula koi paila")
-        }
-        else {
-            reminingBalance.innerText = incomeInputValue - totalExpenses;
-        } 
-        return incomeInputValue - totalExpenses;
-    } else {
-        return;
+    if(totalExpenses > incomeInputValue) {
+        alert("baki taka gula koi paila")
     }
-    
+    else if (printNumber){
+        reminingBalance.innerText = incomeInputValue - totalExpenses;
+    } 
+    return incomeInputValue - totalExpenses;
 }
 
 saveMoney.addEventListener("submit", saveMoneyCalculator)
@@ -59,13 +57,16 @@ function percentage(saveMoneyInputValue, totalValue) {
 function inputValidator(input) {
     let inputValue = input.value;
     if(inputValue === "") {
+        printNumber = false;
         return alert(input.getAttribute("data-input") + " field Cannot be empty");
     } else if (isNaN(inputValue)) {
+        printNumber = false;
         input.value = "";
         return alert(input.getAttribute("data-input") + "field" +  "Please input valid number");
     } else if(inputValue < 0) {
         return alert(input.getAttribute("data-input") + "field" + "Please input positive number");
     } else {
+        printNumber = true;
         let newInputValue = parseInt(inputValue);
         input.value = "";
         return newInputValue
